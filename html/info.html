@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Attendee Info</title>
+        <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #F5EB27;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            border: 4px solid black;
+            background: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #ddd;
+        }
+
+        .logo {
+            width: 60px;
+            height: 20px;
+            background: hotpink;
+            border-radius: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            margin-left: 500px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+
+        .search {
+            display: flex;
+        }
+
+        .search input {
+            padding: 8px;
+            border: 2px solid black;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .search button {
+            padding: 8px 15px;
+            border: 2px solid black;
+            border-left: none;
+            background: #00d1c1;
+            border-radius: 0 20px 20px 0;
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px;
+            background: #53c5bd;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .hero-text p {
+            margin-top: 10px;
+        }
+
+        /* TICKET */
+        .ticket-card {
+            display: flex;
+            background: #f2f2f2;
+            border: 4px solid black;
+            box-shadow: 6px 6px 0 black;
+        }
+
+        .date {
+            background: #f4d74d;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .details {
+            padding: 20px;
+        }
+
+        /* FORM */
+        .form-section {
+            padding: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        /* CHECKBOX */
+        .checkbox {
+            margin: 20px 0;
+        }
+
+        /* BUTTON */
+        .btn {
+            padding: 15px 40px;
+            background: hotpink;
+            border: 3px solid black;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 6px 6px 0 black;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+    </head>
+
+    <body>
+    <div class="container">
+        <!-- NAVBAR -->
+        <div class="navbar">
+            <div class="logo"></div>
+
+            <div class="nav-links">
+                <a href="#">Events</a>
+                <a href="#">Tickets</a>
+                <a href="#">Venue</a>
+            </div>
+
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button>→</button>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>LEAD<br>BOOKER</h1>
+                <p>Complete you details to secure your tickets.</p>
+            </div>
+
+            <div class="ticket-card">
+                <div class="date">
+                    <span>JUNE</span>
+                    <h2>14</h2>
+                    <small>2026</small>
+                </div>
+
+                <div class="details">
+                    <h2>MUSIC FESTIVAL</h2>
+                    <i><p>Central Park</p></i>
+                    <b><p>Price: ₱5000</p></b>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="form-section">
+
+            <h2>ATTENDEE DETAILS</h2>
+
+            <div class="form-grid">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Phone Number">
+                
+                <select>
+                    <option>1 Ticket</option>
+                    <option>2 Tickets</option>
+                    <option>3 Tickets</option>
+                </select>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox"> I agree to receive updates
+            </div>
+
+            <div class="btn-wrapper">
+                <button class="btn big">PROCEED TO PAYMENT →</button>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ticketName = urlParams.get('ticket');
+    if(ticketName) {
+        document.querySelector('.details h2').textContent = ticketName;
+    }
+    </script>
+
+    </body>
+</html>

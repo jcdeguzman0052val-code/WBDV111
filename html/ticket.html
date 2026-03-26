@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Tickets</title>
+        <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #F5EB27;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            border: 4px solid black;
+            background: white;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: #ddd;
+        }
+        .logo {
+            width: 60px;
+            height: 20px;
+            background: hotpink;
+            border-radius: 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            margin-left: 500px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+        }
+        .search input {
+            padding: 8px 12px;
+            border: 2px solid black;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+        }
+        .search button {
+            padding: 8px 15px;
+            border: 2px solid black;
+            border-left: none;
+            background: #00d1c1;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+            background: #53c5bd;
+        }
+        .hero-text h1 {
+            font-size: 60px;
+            margin: 0 0 20px;
+        }
+        .buy-btn {
+            padding: 12px 30px;
+            background: hotpink;
+            border: 3px solid black;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .ticket-card {
+            display: flex;
+            background: #f2f2f2;
+            border: 4px solid black;
+            box-shadow: 6px 6px 0 black;
+            max-width: 400px;
+        }
+        .date {
+           background: #f4d74d;
+            padding: 30px 20px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .date h2 {
+            margin: 5px 0;
+        }
+        .details {
+            padding: 20px;
+        }
+        .buy-small {
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: hotpink;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .big-buy {
+            margin: 40px auto;
+            width: 320px;
+            text-align: center;
+            padding: 30px;
+            background: hotpink;
+            color: white;
+            font-weight: bold;
+            border-radius: 40px;
+            border: 3px solid black;
+            box-shadow: 6px 6px 0 black;
+        }
+        .middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 220px;
+            height: 180px;
+            background: #53c5bd;
+            border: 4px solid black;
+            box-shadow: 6px 6px 0 black;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+        .card a {
+            padding: 10px 25px;
+            background: hotpink;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .card button {
+            padding: 10px 25px;
+            background: hotpink;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .btn {
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 8px 8px 0 black;
+        }
+        </style>
+    </head>
+
+    <body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="#">Events</a>
+                <a href="#">Tickets</a>
+                <a href="#">Venue</a>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button>→</button>
+            </div>
+        </div>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>GET YOUR<br>EVENT<br>TICKETS!</h1>
+                <div class="big-buy btn" data-ticket="MUSIC FESTIVAL">BUY TICKETS NOW</div>
+            </div>
+
+            <div class="ticket-card">
+                <div class="date">
+                    <span>JUNE</span>
+                    <h2>14</h2>
+                    <small>2026</small>
+                </div>
+
+                <div class="details">
+                    <h2>MUSIC FESTIVAL</h2>
+                    <p>Central Park</p>
+                    <button class="btn buy-small" data-ticket="MUSIC FESTIVAL">BUY</button>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="big-buy btn">BUY TICKETS NOW</div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <h3>Love, Sessionistas concert</h3>
+                <button class="btn" data-ticket="LoveSessionistas">BUY</button>
+            </div>
+
+            <div class="card">
+                <h3>Treasure Tour concert</h3>
+                <button class="btn" data-ticket="TreasureTour">BUY</button>
+            </div>
+
+            <div class="card">
+                <h3>The Witcher concert</h3>
+                <button class="btn" data-ticket="TheWitcher">BUY</button>
+            </div>
+            <div class="card">
+                <h3>Rick Price concert</h3>
+                <button class="btn" data-ticket="RickPrice">BUY</button>
+            </div>
+        </div>
+        <script>
+        document.querySelectorAll('button[data-ticket], .big-buy[data-ticket]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const ticket = btn.getAttribute('data-ticket');
+                // Redirect to info.html with ticket info
+                window.location.href = `info.html?ticket=${encodeURIComponent(ticket)}`;
+            });
+        });
+        </script>
+    </body>
+</html>
